@@ -22,7 +22,7 @@ Parameter Example:
 
 > -Server "http://mymagicinfoserver.test.com:7001" -username "%linuxuser" -password "%linuxpassword"
 
-- Set preferred interval. Recommendation is 10min
+- Set preferred interval. Recommendation is 10min - not less cause of performance issues on your PRTG Probe
 - Set alerts as you wish on disconnected devices
 
 ## Example Scrreenshot
