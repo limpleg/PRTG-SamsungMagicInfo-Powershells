@@ -24,6 +24,6 @@ Parameter Example:
 
 Set preferred interval. Recommendation is 1 hour
 
-## Example Scrreenshot
+## Example Screenshot
 <img width="1442" height="511" alt="image" src="https://github.com/user-attachments/assets/6b6d3e63-0975-4da4-888f-4f4c2f888215" />
 
