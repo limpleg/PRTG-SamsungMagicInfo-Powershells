@@ -16,7 +16,7 @@ Click on the links for documentation:
 [PRTG MagicInfo Licence Informations](https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/53fe0817203b3d1edcdc1c12d650aa8aba61c8dd/Readme_PRTGMaggicInfo_Licence.md)
 - Monitors the Licence informations and dates of install and maintenance end of the Licence
 
-PRTG MagicInfo Count Device Connections
+[PRTG MagicInfo Count Device Connections](https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/main/Readme_PRTGMagicInfo_DeviceCount.md)
 - Montiors the amount of connected and disconnected devices
 
 PRTG MagicInfo DeviceSensor
