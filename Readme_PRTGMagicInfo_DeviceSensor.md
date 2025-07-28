@@ -33,6 +33,7 @@ Parameter Example:
 ### Note 
 The Script search the device ID inside MagicInfo by the IP Adress and then connect to 2 different rest API URLs to get datas.
 The wanted fields can be extended when wished - just let me know
+
 Here the both used API URLs:
 - /restapi/v2.0/rms/devices - Get all device information.
 - /restapi/v2.0/rms/devices/{deviceId} - Get specific device information
