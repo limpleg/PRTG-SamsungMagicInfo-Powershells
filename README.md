@@ -13,7 +13,7 @@ Click on the links for documentation:
 [PRTG MagicInfo Server Alerts](https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/main/Readme_PRTGMagicInfo_ServerAlerts.md)
 - Monitor Alerts from the MagicInfo Server
 
-[[PRTG MagicInfo Licence Informations](https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/53fe0817203b3d1edcdc1c12d650aa8aba61c8dd/Readme_PRTGMaggicInfo_Licence.md)
+[PRTG MagicInfo Licence Informations](https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/53fe0817203b3d1edcdc1c12d650aa8aba61c8dd/Readme_PRTGMaggicInfo_Licence.md)
 - Monitors the Licence informations and dates of install and maintenance end of the Licence
 
 PRTG MagicInfo Count Device Connections
