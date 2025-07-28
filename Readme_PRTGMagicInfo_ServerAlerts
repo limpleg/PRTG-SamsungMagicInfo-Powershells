@@ -1,0 +1,5 @@
+# MagicInfo_ServerAlerts.ps1
+This script check MagicInfo Server for alerts and and if alert available it puts the state to error with error in the PRTG Sensor header
+
+## Install
+Download Script [MagicInfo_ServerAlerts.ps1](https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/e2afcc646ca25130964ae8b433166ddd797dff79/MagicInfo_ServerAlerts.ps1)
