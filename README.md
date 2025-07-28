@@ -19,7 +19,7 @@ Click on the links for documentation:
 [PRTG MagicInfo Count Device Connections](https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/main/Readme_PRTGMagicInfo_DeviceCount.md)
 - Montiors the amount of connected and disconnected devices
 
-[PRTG MagicInfo DeviceSensor] (https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/main/Readme_PRTGMagicInfo_DeviceSensor.md)
+[PRTG MagicInfo DeviceSensor](https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/main/Readme_PRTGMagicInfo_DeviceSensor.md)
 
 Get informations from the Server about a Device. 
 - Device Model
