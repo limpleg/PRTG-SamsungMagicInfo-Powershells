@@ -10,7 +10,7 @@ Download the scripts you want and place it on your PRTG probe under:
 ## Features
 Click on the links for documentation:
 
-PRTG MagicInfo Server Alerts
+[PRTG MagicInfo Server Alerts](https://github.com/limpleg/PRTG-SamsungMagicInfo-Powershells/blob/main/Readme_PRTGMagicInfo_ServerAlerts.md)
 - Monitor Alerts from the MagicInfo Server
 
 PRTG MagicInfo Licence Informations
