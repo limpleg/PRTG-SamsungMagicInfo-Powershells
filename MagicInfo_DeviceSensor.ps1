@@ -83,10 +83,14 @@ while ($hasMore) {
     }
 }
 
+
+
 # === Filter valid devices ===
 $validDevices = $allDevices | Where-Object {
     $_.ipAddress -and $_.ipAddress -ne "0.0.0.0"
+
 }
+
 
 # === Match device by IP ===
 $matchingDevices = @()
@@ -95,6 +99,8 @@ foreach ($dev in $validDevices) {
         $matchingDevices += $dev
     }
 }
+
+
 
 # === Device matching logic ===
 if ($matchingDevices.Count -eq 1) {
@@ -130,6 +136,23 @@ try {
     exit
 }
 
+# === Retrieve display info ===
+$displayInfoUrl = "$Server/MagicInfo/restapi/v2.0/rms/devices/display-info"
+$displayInfoBody = @{ ids = @($deviceId) } | ConvertTo-Json -Depth 2
+try {
+    $displayInfoResponse = Invoke-RestMethod -Uri $displayInfoUrl -Method Post -Headers $headers -Body $displayInfoBody -ContentType "application/json"
+    $deviceDisplayInfo = $displayInfoResponse.items.successList[0]
+} catch {
+    $errorMsg = $_.Exception.Message
+    if ($_.Exception.Response -ne $null) {
+        $reader = New-Object System.IO.StreamReader($_.Exception.Response.GetResponseStream())
+        $responseBody = $reader.ReadToEnd()
+        $errorMsg += " | Response: $responseBody"
+    }
+    Write-Output "<prtg><error>1</error><text>❌ Error retrieving display info: $errorMsg</text></prtg>"
+    exit
+}
+
 # === XML output for PRTG ===
 $device = $deviceDetails.items
 $deviceName = $device.deviceName
@@ -145,6 +168,14 @@ $playerVersion = $device.playerVersion
 $macAddress = $device.macAddress
 $groupNames = ($device.groupPathList | ForEach-Object { $_.groupName }) -join " > "
 $ServerInfo = $device.tunnelingServer
+$basicVolume = $deviceDisplayInfo.basicVolume
+$basicMute = $deviceDisplayInfo.basicMute
+$basicSource = $deviceDisplayInfo.basicSource
+$touchControlLock = $deviceDisplayInfo.touchControlLock
+$webBrowserUrl = $deviceDisplayInfo.webBrowserUrl
+$diagnosisMonitorTemperature = $deviceDisplayInfo.diagnosisMonitorTemperature
+
+
 
 $xmlOutput = @"
 <prtg>
@@ -202,6 +233,42 @@ $xmlOutput = @"
         <value>1</value>
         <unit>Custom</unit>
         <customunit>$ServerInfo</customunit>
+    </result>
+    <result>
+        <channel>Volume</channel>
+        <value>$basicVolume</value>
+        <unit>Custom</unit>
+        <customunit>Level</customunit>
+    </result>
+    <result>
+        <channel>Mute</channel>
+        <value>$basicMute</value>
+        <unit>Custom</unit>
+        <customunit>On/Off</customunit>
+    </result>
+    <result>
+        <channel>Source</channel>
+        <value>1</value>
+        <unit>Custom</unit>
+        <customunit>$basicSource</customunit>
+    </result>
+    <result>
+        <channel>Touch Control Lock</channel>
+        <value>$touchControlLock</value>
+        <unit>Custom</unit>
+        <customunit>On/Off</customunit>
+    </result>
+    <result>
+        <channel>Web Browser URL</channel>
+        <value>1</value>
+        <unit>Custom</unit>
+        <customunit>$webBrowserUrl</customunit>
+    </result>
+    <result>
+        <channel>Monitor Temperature</channel>
+        <value>$diagnosisMonitorTemperature</value>
+        <unit>Temperature</unit>
+        <customunit>°C</customunit>
     </result>
     <text>Device: $deviceName | DeviceType: $deviceType | IP: $ip | MacAddress: $macAddress | Firmware: $firmware | Group: $groupNames</text>
 </prtg>
