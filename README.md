@@ -2,6 +2,10 @@
 Several Powershells for Monitoring Samsung MagicInfo Server on PRTG
 
 This scripts connect to the Magic Info Server by Rest API and get informations directly from the server.
+Documentation of Rest API found under
+> https://YOURMAGICINFOSERVER:7001/MagicInfo/swagger-ui.html
+
+**MagicInfo Version used: 8**
 
 ## Basic Install
 Download the scripts you want and place it on your PRTG probe under:  
