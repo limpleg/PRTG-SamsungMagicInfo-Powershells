@@ -24,7 +24,7 @@ Parameter Example:
 
 > -Server "http://mymagicinfoserver.test.com:7001" -username "%linuxuser" -password "%linuxpassword" -PageSize 500 -DeviceIP %host
 
-- Set preferred interval. Recommendation is above 10min
+- Set preferred interval. Recommendation is above 10min - depending on amount of devices on MagicInfo Installation. If it is to low, RestAPI and MagicInfo Webservice will fail after some time.
 - Primary channel is "Power Status"
 
 ## Example Scrreenshot
